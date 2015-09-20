@@ -1,0 +1,23 @@
+{
+  "name": "xx-mongoose",
+  "version": "1.0.0",
+  "description": "Mongoose for xerxes",
+  "author": "Denis Stadniczuk",
+  "license": "ISC",
+  "main": "model.js",
+  "files": [ "model.js" ],
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "keywords": [
+    "xerxes",
+    "mongoose"
+  ],
+  "dependencies": {
+    "mongoose": "^4.1.7"
+  },
+  "devDependencies": {
+    "should": "^7.1.0",
+    "xerxes": "0.0.9"
+  }
+}
