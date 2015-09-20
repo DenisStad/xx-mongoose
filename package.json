@@ -1,6 +1,6 @@
 {
   "name": "xx-mongoose",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Mongoose for xerxes",
   "author": "Denis Stadniczuk",
   "license": "ISC",
@@ -19,5 +19,9 @@
   "devDependencies": {
     "should": "^7.1.0",
     "xerxes": "0.0.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DenisStad/xx-mongoose"
   }
 }
