@@ -1,13 +1,11 @@
 {
   "name": "xx-mongoose",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Mongoose for xerxes",
   "author": "Denis Stadniczuk",
   "license": "ISC",
   "main": "model.js",
-  "files": [
-    "model.js"
-  ],
+  "files": [ "model.js", "connect.js" ],
   "scripts": {
     "test": "node test/test.js"
   },
