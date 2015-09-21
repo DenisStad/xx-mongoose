@@ -57,7 +57,6 @@ exports = module.exports = function(App, connectURL) {
         if (App.models[name].mongooseSchema[a].private) {
           Schema.plugin(jsonSelect, '-' + a);
         }
-        Schema.methods[m] = App.models[name].instanceMethods[m];
       }
 
       for (var m in App.models[name].instanceMethods) {
