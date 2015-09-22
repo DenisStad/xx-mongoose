@@ -46,7 +46,11 @@ exports = module.exports = function(App, connectURL) {
 
   for (var name in App.models) {
     if (App.models[name].mongooseSchema) {
-      var Schema = new Schema(App.models[name].mongooseSchema);
+      var Schema = new Schema(App.models[name].mongooseSchema, {
+        toJSON: {
+          virtuals: true
+        }
+      });
 
       Schema.plugin(jsonSelect, '-_id');
       Schema.virtual('id').get(function() {
