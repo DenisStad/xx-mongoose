@@ -46,32 +46,32 @@ exports = module.exports = function(App, connectURL) {
 
   for (var name in App.models) {
     if (App.models[name].mongooseSchema) {
-      var Schema = new Schema(App.models[name].mongooseSchema, {
+      var schema = new Schema(App.models[name].mongooseSchema, {
         toJSON: {
           virtuals: true
         }
       });
 
-      Schema.plugin(jsonSelect, '-_id');
-      Schema.virtual('id').get(function() {
+      schema.plugin(jsonSelect, '-_id');
+      schema.virtual('id').get(function() {
         return this._id.toString();
       });
 
       for (var a in App.models[name].mongooseSchema) {
         if (App.models[name].mongooseSchema[a].private) {
-          Schema.plugin(jsonSelect, '-' + a);
+          schema.plugin(jsonSelect, '-' + a);
         }
       }
 
       for (var m in App.models[name].instanceMethods) {
-        Schema.methods[m] = App.models[name].instanceMethods[m];
+        schema.methods[m] = App.models[name].instanceMethods[m];
       }
 
       if (App.models[name].mongoosePremodel) {
-        App.models[name].mongoosePremodel(Schema);
+        App.models[name].mongoosePremodel(schema);
       }
 
-      App.models[name].Model = mongoose.model(name, Schema);
+      App.models[name].Model = mongoose.model(name, schema);
     }
   }
 };
